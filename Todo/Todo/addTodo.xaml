@@ -1,12 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Todo.addTodo">
+             x:Class="Todo.addTodo"
+             Title="Create a new todo">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Add page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="30">
+            <Label Text="Title:" FontSize="30"/>
+            <Entry  Placeholder="Input text here"
+                 />
+            
+            <Label Text="Description: " FontSize="30"/>
+            <Entry  Placeholder="Input text here"
+                 />
+
+            <Button
+                Text="Done"
+                Clicked="completedTodo"
+                />
         </StackLayout>
+      
     </ContentPage.Content>
 </ContentPage>

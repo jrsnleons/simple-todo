@@ -5,7 +5,6 @@
              Title="My Todo">
     <AbsoluteLayout>
         <!---TodosTemplate[checkmark, todoName, delete ],-->
-        <Label Text ="Hello"/>
         <StackLayout>
             <ListView x:Name="todo">
                 
