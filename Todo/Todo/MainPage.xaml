@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Todo"
              x:Class="Todo.MainPage"
              Title="My Todo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:TextDecorationsConverter x:Key="textDecorationsConverter" />
+            <local:BoolToColorConverter x:Key="boolToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <AbsoluteLayout>
-        <!---TodosTemplate[checkmark, todoName, delete ],-->
         <StackLayout>
-            <ListView x:Name="todo"  SeparatorVisibility="None" Margin="5" VerticalOptions="FillAndExpand" ItemSelected="OnItemSelected">
+            <ListView x:Name="todo" Margin="5" VerticalOptions="FillAndExpand" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -25,23 +31,30 @@
 
                                 <!-- Todo name and description -->
                                 <StackLayout Grid.Column="0" Orientation="Vertical">
-                                    <Label Text="{Binding title}" FontSize="18" TextColor="White" FontAttributes="Bold"/>
-                                    <Label Text="{Binding description}" FontSize="14" />
+                                    <Label Text="{Binding title}"
+                                           MaxLines="1"
+                                           LineBreakMode="TailTruncation"
+                                           FontSize="18" 
+                                           FontAttributes="Bold" 
+                                           TextDecorations="{Binding completed, Converter={StaticResource textDecorationsConverter}}"
+                                           TextColor="{Binding completed, Converter={StaticResource boolToColorConverter}}"/>
                                 </StackLayout>
 
-                                <!-- Edit button -->
-                                <Button Grid.Column="1" Text="Done" WidthRequest="60"/>
+                                <!-- Done button -->
+                                <Button Grid.Column="1" Text="Done" WidthRequest="60" Clicked="toggleComplete"/>
                                 <!-- Delete button -->
-                                <Button Grid.Column="2" Text="Delete" WidthRequest="60" Clicked="onDelete"/>
+                                <Button Grid.Column="2" Text="Delete" WidthRequest="60" Clicked="onDelete" BindingContext="{Binding .}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </StackLayout>
 
-        <!-- Add Button: navigates to the addTodo page-->
+
+
+
+            <!-- Add Button: navigates to the addTodo page-->
         <Button 
                 x:Name="addButton"
                 HorizontalOptions="End"

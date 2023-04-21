@@ -5,11 +5,11 @@
              Title="Edit todo">
     <ContentPage.Content>
         <StackLayout Padding="30">
-            <Label Text="Title:" FontSize="30" TextColor="White"/>
+            <Label Text="Title:" FontSize="30" FontAttributes="Bold"/>
             <Entry x:Name="titleEntry" Text="{Binding title}"/>
 
-            <Label Text="Description:" FontSize="30" TextColor="White"/>
-            <Entry x:Name="descriptionEntry" Text="{Binding description}"/>
+            <Label Text="Description:" FontSize="30" FontAttributes="Bold" />
+            <Entry x:Name="descriptionEntry" Text="{Binding description}" />
 
             <Button Text="Save" Clicked="OnSaveClicked"/>
         </StackLayout>

@@ -28,7 +28,7 @@ namespace Todo
                 {
                     throw new Exception("Title cannot be empty.");
                 }
-                myList.Add(new todoList { title = titleEntry.Text, description = descriptionEntry.Text });
+                myList.Add(new todoList { title = titleEntry.Text, description = descriptionEntry.Text, completed = false});
                 await Navigation.PopAsync();
             }
             catch (Exception ex) 

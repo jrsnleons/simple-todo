@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Todo.instructionPage">
+    <ContentPage.Content>
+        <StackLayout Margin="30, 60">
+            <Label Text="Help" FontSize="40" HorizontalOptions="CenterAndExpand"/>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Edit: " FontAttributes="Bold" FontSize="15"/>
+                <Label Text="Click on an item to Edit" FontSize="15"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Delete: " FontAttributes="Bold" FontSize="15"/>
+                <Label Text="Click on the 'Delete' Button" FontSize="15"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Done: " FontAttributes="Bold" FontSize="15"/>
+                <Label Text="To mark the todo item as completed, click on the 'Done' Button" FontSize="15"/>
+            </StackLayout>
+            <Label Text="About" FontSize="40" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="A simple to do mobile application made using xamarin.forms"/>
+            <Label Text="A mobile application for android created for a project in my course CIS 2203 Mobile Development"/>
+            <Label Text="Created bby: Jerson Leones and Joey Ng"/>
+            <Button Clicked="closeModal" Text="Close"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
