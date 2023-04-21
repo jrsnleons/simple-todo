@@ -6,11 +6,40 @@
     <AbsoluteLayout>
         <!---TodosTemplate[checkmark, todoName, delete ],-->
         <StackLayout>
-            <ListView x:Name="todo">
-                
-            </ListView>
-        </StackLayout>
+            <ListView x:Name="todo"  SeparatorVisibility="None" Margin="5" VerticalOptions="FillAndExpand" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <!-- Column Definitions -->
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                </Grid.ColumnDefinitions>
 
+                                <!-- Row Definitions -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Todo name and description -->
+                                <StackLayout Grid.Column="0" Orientation="Vertical">
+                                    <Label Text="{Binding title}" FontSize="18" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="{Binding description}" FontSize="14" />
+                                </StackLayout>
+
+                                <!-- Edit button -->
+                                <Button Grid.Column="1" Text="Done" WidthRequest="60"/>
+                                <!-- Delete button -->
+                                <Button Grid.Column="2" Text="Delete" WidthRequest="60" Clicked="onDelete"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
 
         <!-- Add Button: navigates to the addTodo page-->
         <Button 

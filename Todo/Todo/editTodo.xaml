@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Todo.todoDetail">
+             x:Class="Todo.editTodo">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="30">
+            <Label Text="Title:" FontSize="30" TextColor="White"/>
+            <Entry x:Name="titleEntry" Text="{Binding title}"/>
+
+            <Label Text="Description:" FontSize="30" TextColor="White"/>
+            <Entry x:Name="descriptionEntry" Text="{Binding description}"/>
+
+            <Button Text="Save" Clicked="OnSaveClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

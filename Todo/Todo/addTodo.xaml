@@ -4,20 +4,18 @@
              x:Class="Todo.addTodo"
              Title="Create a new todo">
     <ContentPage.Content>
-        <StackLayout Padding="30">
-            <Label Text="Title:" FontSize="30"/>
-            <Entry  Placeholder="Input text here"
-                 />
-            
-            <Label Text="Description: " FontSize="30"/>
-            <Entry  Placeholder="Input text here"
-                 />
-
+        <StackLayout Padding="30" >
+            <Label Text="Title:" FontSize="30" TextColor="White"/>
+            <Entry 
+                x:Name="titleEntry"
+                Placeholder="Input todo here..."/>
+            <Label x:Name="test" Text="Description:" FontSize="30" TextColor="White"/>
+            <Entry 
+                x:Name="descriptionEntry"
+                Placeholder="Input description here..."/>
             <Button
                 Text="Done"
-                Clicked="completedTodo"
-                />
+                Clicked="ToAddTodo"/>
         </StackLayout>
-      
     </ContentPage.Content>
 </ContentPage>
